@@ -1,0 +1,13 @@
+{
+    "Servers": {
+        "1": {
+            "Name": "FogLifter Dev DB",
+            "Group": "FogLifter Server",
+            "Port": 5432,
+            "Username": "foglifter",
+            "Host": "drf-jwt-db",
+            "SSLMode": "prefer",
+            "MaintenanceDB": "postgres"
+        }
+    }
+}

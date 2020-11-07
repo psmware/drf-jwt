@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  drf-jwt-app:
+    image: drf-jwt-app
+    container_name: drf-jwt-app
+    hostname: drf-jwt-app
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile.app
+    user: vscode
+    volumes:
+      - ~/.ssh:/home/vscode/.ssh:ro
+      - ~/.gnupg:/home/vscode/.gnupg
+      - ..:/app
+    ports:
+      - 0.0.0.0:5000:5000
+    env_file:
+      - devcontainer.env
+    extra_hosts:
+      - "drf-jwt-db:172.28.1.6"
+    command: sleep infinity
+volumes:
+  ssh:
+  gpg:
+  app:
